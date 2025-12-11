@@ -1,0 +1,193 @@
+title: Virtual Router Architecture {
+  shape: text
+  near: top-center
+  style: {
+    font-size: 75
+  }
+}
+
+direction: right
+classes: {
+  core_router: {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Router.svg
+    style: {
+      shadow: true
+    }
+  }
+  switch: {
+    icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FLocal%20Network%20Gateways.svg
+  }
+  server: {
+    icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+  }
+  virtual_connection: {
+    style: {
+      stroke-dash: 3
+      stroke: deepskyblue
+    }
+  }
+}
+
+PRX02: {
+  class: server
+  DEV-VA1-PPE1: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.1
+  }
+  DEV-VA1-PPE2: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+}
+
+PRX03: {
+  class: server
+  DEV-VA1-PPE3: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.1
+  }
+  DEV-VA1-PPE4: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+}
+
+PRX04: {
+  class: server
+  DEV-VA2-PPE1: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.1
+  }
+  DEV-VA2-PPE2: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+}
+
+PRX05: {
+  class: server
+  DEV-VA2-PPE3: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.1
+  }
+  DEV-VA2-PPE4: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+}
+
+PRX07: {
+  class: server
+  DEV-VA3-PPE1: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.1
+  }
+  DEV-VA3-PPE2: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+}
+
+PRX08: {
+  class: server
+  DEV-VA3-PPE3: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.1
+  }
+  DEV-VA3-PPE4: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+}
+
+PRX09: {
+  class: server
+  DEV-VA4-PPE1: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.1
+  }
+  DEV-VA4-PPE1: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+}
+
+PRX10: {
+  class: server
+  DEV-VA4-PPE3: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.1
+  }
+  DEV-VA4-PPE4: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+}
+
+DC-SW01: {
+  class: switch
+}
+
+DC-SW01 -- PRX02: {
+  source-arrowhead.label: Twe1/0/3
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: deepskyblue
+}
+
+DC-SW01 -- PRX03: {
+  source-arrowhead.label: Twe1/0/5
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: deepskyblue
+}
+
+DC-SW01 -- PRX04: {
+  source-arrowhead.label: Twe1/0/7
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: deepskyblue
+}
+
+DC-SW01 -- PRX05: {
+  source-arrowhead.label: Twe1/0/9
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: deepskyblue
+}
+
+DC-SW01 -- PRX07: {
+  source-arrowhead.label: Twe1/0/13
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: deepskyblue
+}
+
+DC-SW01 -- PRX08: {
+  source-arrowhead.label: Twe1/0/15
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: deepskyblue
+}
+
+DC-SW01 -- PRX09: {
+  source-arrowhead.label: Twe1/0/17
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: deepskyblue
+}
+
+DC-SW01 -- PRX10: {
+  source-arrowhead.label: Twe1/0/19
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: deepskyblue
+}
+
+PRX02.DEV-VA1-PPE1 -- PRX02.DEV-VA1-PPE2: {
+  source-arrowhead.label: G0/0/0
+  target-arrowhead.label: G0/0/0
+  label: Vl1006
+  class: virtual_connection
+}
