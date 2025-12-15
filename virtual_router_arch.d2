@@ -15,6 +15,12 @@ classes: {
       shadow: true
     }
   }
+
+  sdwan: {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Firewall%20Rules.svg
+  }
+
   switch: {
     icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FLocal%20Network%20Gateways.svg
   }
@@ -79,11 +85,11 @@ PRX05: {
     tooltip: MGMT IP: 1.1.1.2
   }
   DEV-VSF2-CE1: {
-    class: core_router
+    class: sdwan
     tooltip: MGMT IP: 1.1.1.2
   }
   DEV-VSF2-CE2: {
-    class: core_router
+    class: sdwan
     tooltip: MGMT IP: 1.1.1.2
   }
   DEV-VA2-WANEM01
@@ -116,11 +122,11 @@ PRX08: {
     tooltip: MGMT IP: 1.1.1.2
   }
   DEV-VSF1-CE1: {
-    class: core_router
+    class: sdwan
     tooltip: MGMT IP: 1.1.1.2
   }
   DEV-VSF1-CE2: {
-    class: core_router
+    class: sdwan
     tooltip: MGMT IP: 1.1.1.2
   }
   DEV-VA3-FTM01: {
