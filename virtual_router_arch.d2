@@ -21,6 +21,9 @@ classes: {
   server: {
     icon: https://icons.terrastruct.com/essentials%2F112-server.svg
   }
+  FTM: {
+    icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+  }
   virtual_connection: {
     style: {
       stroke-dash: 3
@@ -98,6 +101,17 @@ PRX08: {
   DEV-VA3-PPE4: {
     class: core_router
     tooltip: MGMT IP: 1.1.1.2
+  }
+  DEV-VSF1-CE1: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+  DEV-VSF1-CE2: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+  DEV-VA3-FTM01: {
+    class: FTM
   }
 }
 
@@ -189,5 +203,29 @@ PRX02.DEV-VA1-PPE1 -- PRX02.DEV-VA1-PPE2: {
   source-arrowhead.label: G0/0/0
   target-arrowhead.label: G0/0/0
   label: Vl1006
+  class: virtual_connection
+}
+PRX08.DEV-VA3-PPE3 -- PRX08.DEV-VSF1-CE1: {
+  source-arrowhead.label: G0/0/6
+  target-arrowhead.label: Port1
+  label: Vl1500
+  class: virtual_connection
+}
+PRX08.DEV-VA3-PPE3 -- PRX08.DEV-VSF1-CE2: {
+  source-arrowhead.label: G0/0/7
+  target-arrowhead.label: Port1
+  label: Vl1501
+  class: virtual_connection
+}
+PRX08.DEV-VA3-PPE4 -- PRX08.DEV-VSF1-CE1: {
+  source-arrowhead.label: G0/0/6
+  target-arrowhead.label: Port2
+  label: Vl1502
+  class: virtual_connection
+}
+PRX08.DEV-VA3-PPE4 -- PRX08.DEV-VSF1-CE2: {
+  source-arrowhead.label: G0/0/7
+  target-arrowhead.label: Port2
+  label: Vl1503
   class: virtual_connection
 }
