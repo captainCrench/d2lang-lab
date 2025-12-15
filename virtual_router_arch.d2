@@ -84,16 +84,19 @@ PRX05: {
     class: core_router
     tooltip: MGMT IP: 1.1.1.2
   }
-  DEV-VSF2-CE1: {
+  DEV-VA2-WANAGG1: {
+    class: core_router
+    tooltip: MGMT IP: 1.1.1.2
+  }
+  DEV-VA2-SDWAN1: {
     class: sdwan
     tooltip: MGMT IP: 1.1.1.2
   }
-  DEV-VSF2-CE2: {
+  DEV-VA2-SDWAN2: {
     class: sdwan
     tooltip: MGMT IP: 1.1.1.2
   }
   DEV-VA2-WANEM01
-  DEV-VA2-IPERF01
   DEV-VA2-SW01: {
     class: switch
   }
@@ -109,6 +112,18 @@ PRX07: {
     class: core_router
     tooltip: MGMT IP: 1.1.1.2
   }
+  DEV-VSF2-CE1: {
+    class: sdwan
+    tooltip: MGMT IP: 1.1.1.2
+  }
+  DEV-VSF2-CE2: {
+    class: sdwan
+    tooltip: MGMT IP: 1.1.1.2
+  }
+  DEV-VSF2-SW01: {
+    class: switch
+  }
+  DEV-VSF2-IPERF01
 }
 
 PRX08: {
@@ -229,7 +244,125 @@ PRX02.DEV-VA1-PPE1 -- PRX02.DEV-VA1-PPE2: {
   class: virtual_connection
 }
 
-# Fortinet Connections
+# ## SDWAN Testing Connections -- PRX05,07 (VA2, VSF1) ###
+
+PRX05.DEV-VA2-WANAGG1 -- PRX05.DEV-VA2-SW01: {
+  source-arrowhead.label: G0/0/0
+  target-arrowhead.label: G0/0/0
+  label: Vl1500 - WAN Prov1
+  class: virtual_connection
+}
+PRX05.DEV-VA2-SW01 -- PRX05.DEV-VA2-WANEM01: {
+  source-arrowhead.label: G0/0/1
+  target-arrowhead.label: ens5
+  label: Vl1501 - WAN Prov1
+  class: virtual_connection
+}
+
+PRX05.DEV-VA2-SW01 -- PRX05.DEV-VA2-WANEM01: {
+  source-arrowhead.label: G0/0/4
+  target-arrowhead.label: ens7
+  label: Vl1502 - WAN Prov1
+  class: virtual_connection
+}
+PRX05.DEV-VA2-SW01 -- PRX05.DEV-VA2-WANEM01: {
+  source-arrowhead.label: G0/0/5
+  target-arrowhead.label: ens8
+  label: Vl1503 - WAN Prov2
+  class: virtual_connection
+}
+
+PRX05.DEV-VA2-WANAGG1 -- PRX05.DEV-VA2-SDWAN1: {
+  source-arrowhead.label: G0/0/1
+  target-arrowhead.label: Port2
+  label: Vl1504
+  class: virtual_connection
+}
+
+PRX05.DEV-VA2-WANAGG1 -- PRX05.DEV-VA2-SDWAN2: {
+  source-arrowhead.label: G0/0/2
+  target-arrowhead.label: Port2
+  label: Vl1505
+  class: virtual_connection
+}
+
+PRX05.DEV-VA2-WANAGG1 -- PRX05.DEV-VA2-SW01: {
+  source-arrowhead.label: G0/0/3
+  target-arrowhead.label: G0/0/2
+  label: Vl1506 - WAN Prov2
+  class: virtual_connection
+}
+
+PRX05.DEV-VA2-SW01 -- PRX05.DEV-VA2-WANEM01: {
+  source-arrowhead.label: G0/0/3
+  target-arrowhead.label: ens6
+  label: Vl1507 - WAN Prov2
+  class: virtual_connection
+}
+
+PRX05.DEV-VA2-PPE3 -- PRX05.DEV-VA2-SDWAN1: {
+  source-arrowhead.label: G0/0/6
+  target-arrowhead.label: Port1
+  label: Vl1508
+  class: virtual_connection
+}
+PRX05.DEV-VA2-PPE4 -- PRX05.DEV-VA2-SDWAN2: {
+  source-arrowhead.label: G0/0/6
+  target-arrowhead.label: Port1
+  label: Vl1509
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-CE1 -- PRX05.DEV-VA2-WANEM01: {
+  source-arrowhead.label: Port1
+  target-arrowhead.label: ens3
+  label: Vl1510 - WAN Prov1
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-CE2 -- PRX05.DEV-VA2-WANEM01: {
+  source-arrowhead.label: Port1
+  target-arrowhead.label: ens4
+  label: Vl1511 - WAN Prov1
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-CE1 -- PRX05.DEV-VA2-WANEM01: {
+  source-arrowhead.label: Port2
+  target-arrowhead.label: ens1
+  label: Vl1512 - WAN Prov2
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-CE2 -- PRX05.DEV-VA2-WANEM01: {
+  source-arrowhead.label: Port2
+  target-arrowhead.label: ens2
+  label: Vl1513 - WAN Prov2
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-CE1 -- PRX07.DEV-VSF2-CE2: {
+  source-arrowhead.label: Port3
+  target-arrowhead.label: Port3
+  label: Vl1514
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-IPERF01 -- PRX05.DEV-VA2-SW01: {
+  source-arrowhead.label: ens1
+  target-arrowhead.label: G0/0/8
+  label: Vl1515
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-SW01 -- PRX07.DEV-VSF2-CE1: {
+  source-arrowhead.label: G0/0/0
+  target-arrowhead.label: Port4
+  label: Vl1516
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-SW01 -- PRX07.DEV-VSF2-CE2: {
+  source-arrowhead.label: G0/0/1
+  target-arrowhead.label: Port4
+  label: Vl1517
+  class: virtual_connection
+}
+
+# ## SDWAN Testing Connections -- PRX08 (VA3) ###
+
 PRX08.DEV-VA3-PPE3 -- PRX08.DEV-VA3-WANEM02: {
   source-arrowhead.label: G0/0/6
   target-arrowhead.label: ens1
@@ -254,48 +387,6 @@ PRX08.DEV-VSF1-CE2 -- PRX08.DEV-VA3-WANEM02: {
   label: Vl1503
   class: virtual_connection
 }
-PRX05.DEV-VA2-PPE3 -- PRX05.DEV-VA2-WANEM01: {
-  source-arrowhead.label: G0/0/6
-  target-arrowhead.label: ens1
-  label: Vl1504
-  class: virtual_connection
-}
-PRX05.DEV-VA2-PPE4 -- PRX05.DEV-VA2-WANEM01: {
-  source-arrowhead.label: G0/0/6
-  target-arrowhead.label: ens2
-  label: Vl1505
-  class: virtual_connection
-}
-PRX05.DEV-VSF2-CE1 -- PRX05.DEV-VA2-WANEM01: {
-  source-arrowhead.label: Port1
-  target-arrowhead.label: ens3
-  label: Vl1506
-  class: virtual_connection
-}
-PRX05.DEV-VSF2-CE2 -- PRX05.DEV-VA2-WANEM01: {
-  source-arrowhead.label: Port1
-  target-arrowhead.label: ens4
-  label: Vl1507
-  class: virtual_connection
-}
-PRX05.DEV-VA2-IPERF01 -- PRX05.DEV-VA2-SW01: {
-  source-arrowhead.label: ens1
-  target-arrowhead.label: G0/0/8
-  label: Vl1508
-  class: virtual_connection
-}
-PRX05.DEV-VA2-SW01 -- PRX05.DEV-VSF2-CE1: {
-  source-arrowhead.label: G0/0/0
-  target-arrowhead.label: Port4
-  label: Vl1509
-  class: virtual_connection
-}
-PRX05.DEV-VA2-SW01 -- PRX05.DEV-VSF2-CE2: {
-  source-arrowhead.label: G0/0/1
-  target-arrowhead.label: Port4
-  label: Vl1510
-  class: virtual_connection
-}
 PRX08.DEV-VA3-SW01 -- PRX08.DEV-VSF1-CE1: {
   source-arrowhead.label: G0/0/0
   target-arrowhead.label: Port4
@@ -308,7 +399,9 @@ PRX08.DEV-VA3-SW01 -- PRX08.DEV-VSF1-CE2: {
   label: Vl1512
   class: virtual_connection
 }
-PRX05.DEV-VA2-IPERF01 -- PRX08.DEV-VA3-SW01: {
+
+# ## Test End point Connections ###
+PRX07.DEV-VSF2-IPERF01 -- PRX08.DEV-VA3-SW01: {
   source-arrowhead.label: ens2
   target-arrowhead.label: G0/0/8
   label: Vl1513
