@@ -409,21 +409,21 @@ PRX09.DEV-VA8-PPE3 -- PRX03.DEV-VA1-PPE4: {
 PRX09.DEV-VA8-PPE4 -- PRX10.DEV-VA6-PPE3: {
   source-arrowhead.label: G0/0/0
   target-arrowhead.label: G0/0/0
-  label: Vl1000
+  label: Vl1036
   class: virtual_connection_core
 }
 
 PRX02.DEV-VA6-PPE1 -- PRX02.DEV-VA6-PPE2: {
   source-arrowhead.label: G0/0/1
   target-arrowhead.label: G0/0/1
-  label: Vl1005
+  label: Vl1040
   class: virtual_connection_core
 }
 
 PRX10.DEV-VA6-PPE3 -- PRX10.DEV-VA6-PPE4: {
   source-arrowhead.label: G0/0/1
   target-arrowhead.label: G0/0/1
-  label: Vl1035
+  label: Vl1037
   class: virtual_connection_core
 }
 
@@ -436,31 +436,31 @@ PRX02.DEV-VA6-PPE1 -- PRX03.DEV-VA7-PPE1: {
 PRX02.DEV-VA6-PPE2 -- PRX04.DEV-VA2-PPE1: {
   source-arrowhead.label: G0/0/0
   target-arrowhead.label: G0/0/0
-  label: Vl1006
+  label: Vl1043
   class: virtual_connection_core
 }
 PRX02.DEV-VA6-PPE2 -- PRX09.DEV-VA4-PPE2: {
   source-arrowhead.label: G0/0/2
   target-arrowhead.label: G0/0/0
-  label: Vl1004
+  label: Vl1039
   class: virtual_connection_core
 }
 PRX10.DEV-VA6-PPE3 -- PRX03.DEV-VA7-PPE3: {
   source-arrowhead.label: G0/0/2
   target-arrowhead.label: G0/0/2
-  label: Vl1003
+  label: Vl1038
   class: virtual_connection_core
 }
 PRX10.DEV-VA6-PPE4 -- PRX03.DEV-VA1-PPE3: {
   source-arrowhead.label: G0/0/2
   target-arrowhead.label: G0/0/0
-  label: Vl1001
+  label: Vl1035
   class: virtual_connection_core
 }
 PRX10.DEV-VA6-PPE4 -- PRX08.DEV-VA3-PPE4: {
   source-arrowhead.label: G0/0/0
   target-arrowhead.label: G0/0/0
-  label: Vl1002
+  label: Vl1041
   class: virtual_connection_core
 }
 PRX02.DEV-VA1-PPE2 -- PRX04.DEV-VA2-PPE1: {
@@ -682,12 +682,7 @@ PRX07.DEV-VSF2-CE1 -- PRX07.DEV-VSF2-CE2: {
   label: Vl1514
   class: virtual_connection
 }
-PRX07.DEV-VSF2-IPERF01 -- PRX05.DEV-VA2-SW01: {
-  source-arrowhead.label: ens1
-  target-arrowhead.label: G0/0/8
-  label: Vl1515
-  class: virtual_connection
-}
+
 PRX07.DEV-VSF2-SW01 -- PRX07.DEV-VSF2-CE1: {
   source-arrowhead.label: G0/0/0
   target-arrowhead.label: Port4
@@ -745,5 +740,11 @@ PRX07.DEV-VSF2-IPERF01 -- PRX08.DEV-VA3-SW01: {
   source-arrowhead.label: ens2
   target-arrowhead.label: G0/0/8
   label: Vl1513
+  class: virtual_connection
+}
+PRX07.DEV-VSF2-IPERF01 -- PRX05.DEV-VA2-SW01: {
+  source-arrowhead.label: ens1
+  target-arrowhead.label: G0/0/8
+  label: Vl1515
   class: virtual_connection
 }
