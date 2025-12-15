@@ -395,7 +395,24 @@ PRX02.DEV-VA6-PPE2 -- PRX09.DEV-VA4-PPE2: {
   label: Vl1004
   class: virtual_connection_core
 }
-
+PRX10.DEV-VA6-PPE3 -- PRX03.DEV-VA7-PPE3: {
+  source-arrowhead.label: G0/0/2
+  target-arrowhead.label: G0/0/2
+  label: Vl1003
+  class: virtual_connection_core
+}
+PRX10.DEV-VA6-PPE4 -- PRX03.DEV-VA1-PPE3: {
+  source-arrowhead.label: G0/0/2
+  target-arrowhead.label: G0/0/0
+  label: Vl1001
+  class: virtual_connection_core
+}
+PRX10.DEV-VA6-PPE4 -- PRX08.DEV-VA3-PPE4: {
+  source-arrowhead.label: G0/0/0
+  target-arrowhead.label: G0/0/0
+  label: Vl1002
+  class: virtual_connection_core
+}
 # ## SDWAN Testing Connections -- PRX05,07 (VA2, VSF1) ###
 
 PRX05.DEV-VA2-WANAGG1 -- PRX05.DEV-VA2-SW01: {
