@@ -8,11 +8,20 @@ title: Virtual Router Architecture {
 
 direction: right
 classes: {
-  core_router: {
+  core_router_A: {
     shape: image
     icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Router.svg
     style: {
       shadow: true
+      font-color: blue
+    }
+  }
+  core_router_B: {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Router.svg
+    style: {
+      shadow: true
+      font-color: red
     }
   }
 
@@ -47,19 +56,23 @@ classes: {
 PRX01: {
   class: server
   DEV-VA5-PPE1: {
-    class: core_router
+    label: DEV-VA5-PPE1 (WA - A - 1)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.213
   }
   DEV-VA5-PPE2: {
-    class: core_router
+    label: DEV-VA5-PPE2 (WA - A - 2)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.214
   }
   DEV-VA5-PPE3: {
-    class: core_router
+    label: DEV-VA5-PPE3 (WA - B - 1)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.240
   }
   DEV-VA5-PPE4: {
-    class: core_router
+    label: DEV-VA5-PPE4 (WA - B - 2)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.241
   }
 }
@@ -67,19 +80,23 @@ PRX01: {
 PRX02: {
   class: server
   DEV-VA1-PPE1: {
-    class: core_router
+    label: DEV-VA1-PPE1 (AD - A - 1)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.205
   }
   DEV-VA1-PPE2: {
-    class: core_router
+    label: DEV-VA1-PPE2 (AD - A - 2)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.206
   }
   DEV-VA6-PPE1: {
-    class: core_router
+    label: DEV-VA6-PPE1 (ML - A - 1)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.200
   }
   DEV-VA6-PPE2: {
-    class: core_router
+    label: DEV-VA6-PPE2 (ML - A - 2)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.201
   }
 }
@@ -87,27 +104,33 @@ PRX02: {
 PRX03: {
   class: server
   DEV-VA1-PPE3: {
-    class: core_router
+    label: DEV-VA1-PPE3 (AD - B - 1)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.230
   }
   DEV-VA1-PPE4: {
-    class: core_router
+    label: DEV-VA1-PPE4 (AD - B - 2)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.231
   }
   DEV-VA7-PPE1: {
-    class: core_router
+    label: DEV-VA7-PPE1 (BN - A - 1)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.209
   }
   DEV-VA7-PPE2: {
-    class: core_router
+    label: DEV-VA7-PPE2 (BN - A - 2)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.210
   }
   DEV-VA7-PPE3: {
-    class: core_router
+    label: DEV-VA7-PPE3 (BN - B - 1)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.238
   }
   DEV-VA7-PPE4: {
-    class: core_router
+    label: DEV-VA7-PPE4 (BN - B - 2)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.239
   }
 }
@@ -115,19 +138,23 @@ PRX03: {
 PRX04: {
   class: server
   DEV-VA2-PPE1: {
-    class: core_router
+    label: DEV-VA2-PPE1 (SY - A - 2)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.208
   }
   DEV-VA2-PPE2: {
-    class: core_router
+    label: DEV-VA2-PPE2 (SY - A - 1)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.207
   }
   DEV-VA8-PPE1: {
-    class: core_router
+    label: DEV-VA8-PPE1 (PER - A - 1)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.203
   }
   DEV-VA8-PPE2: {
-    class: core_router
+    label: DEV-VA8-PPE2 (PER - A - 2)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.204
   }
 }
@@ -135,11 +162,13 @@ PRX04: {
 PRX05: {
   class: server
   DEV-VA2-PPE3: {
-    class: core_router
+    label: DEV-VA2-PPE3 (SY - B - 2)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.237
   }
   DEV-VA2-PPE4: {
-    class: core_router
+    label: DEV-VA2-PPE4 (SY - B - 1)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.236
   }
   DEV-VA2-WANAGG1: {
@@ -163,11 +192,13 @@ PRX05: {
 PRX07: {
   class: server
   DEV-VA3-PPE1: {
-    class: core_router
+    label: DEV-VA3-PPE1 (HUME - A - 1)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.211
   }
   DEV-VA3-PPE2: {
-    class: core_router
+    label: DEV-VA3-PPE2 (HUME - A - 2)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.212
   }
   DEV-VSF2-CE1: {
@@ -187,11 +218,13 @@ PRX07: {
 PRX08: {
   class: server
   DEV-VA3-PPE3: {
-    class: core_router
+    label: DEV-VA3-PPE3 (HUME - B - 1)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.244
   }
   DEV-VA3-PPE4: {
-    class: core_router
+    label: DEV-VA3-PPE4 (HUME - B - 2)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.245
   }
   DEV-VSF1-CE1: {
@@ -214,19 +247,23 @@ PRX08: {
 PRX09: {
   class: server
   DEV-VA4-PPE1: {
-    class: core_router
+    label: DEV-VA4-PPE1 (FYSH - A - 1)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.215
   }
   DEV-VA4-PPE2: {
-    class: core_router
+    label: DEV-VA4-PPE2 (FYSH - A - 2)
+    class: core_router_A
     tooltip: MGMT IP: 172.16.23.216
   }
   DEV-VA8-PPE3: {
-    class: core_router
+    label: DEV-VA8-PPE3 (PER - B - 1)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.232
   }
   DEV-VA8-PPE4: {
-    class: core_router
+    label: DEV-VA8-PPE4 (PER - B - 2)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.233
   }
 }
@@ -234,19 +271,23 @@ PRX09: {
 PRX10: {
   class: server
   DEV-VA4-PPE3: {
-    class: core_router
+    label: DEV-VA4-PPE3 (FYSH - B - 1)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.242
   }
   DEV-VA4-PPE4: {
-    class: core_router
+    label: DEV-VA4-PPE4 (FYSH - B - 2)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.243
   }
   DEV-VA6-PPE3: {
-    class: core_router
+    label: DEV-VA6-PPE3 (ML - B - 1)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.230
   }
   DEV-VA6-PPE4: {
-    class: core_router
+    label: DEV-VA6-PPE4 (ML - B - 2)
+    class: core_router_B
     tooltip: MGMT IP: 172.16.23.231
   }
 }
