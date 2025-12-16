@@ -266,7 +266,7 @@ PRX08: {
     class: FTM
   }
   DEV-VA3-WANEM02
-  DEV-VA3-SW01: {
+  DEV-VSF1-SW01: {
     class: switch
   }
 }
@@ -745,13 +745,13 @@ PRX08.DEV-VSF1-CE2 -- PRX08.DEV-VA3-WANEM02: {
   label: Vl1503
   class: virtual_connection
 }
-PRX08.DEV-VA3-SW01 -- PRX08.DEV-VSF1-CE1: {
+PRX08.DEV-VSF1-SW01 -- PRX08.DEV-VSF1-CE1: {
   source-arrowhead.label: G0/0/0
   target-arrowhead.label: Port4
   label: Vl1511
   class: virtual_connection
 }
-PRX08.DEV-VA3-SW01 -- PRX08.DEV-VSF1-CE2: {
+PRX08.DEV-VSF1-SW01 -- PRX08.DEV-VSF1-CE2: {
   source-arrowhead.label: G0/0/1
   target-arrowhead.label: Port4
   label: Vl1512
@@ -759,13 +759,13 @@ PRX08.DEV-VA3-SW01 -- PRX08.DEV-VSF1-CE2: {
 }
 
 # ## Test End point Connections ###
-PRX07.DEV-VSF2-IPERF01 -- PRX08.DEV-VA3-SW01: {
+PRX07.DEV-VSF2-IPERF01 -- PRX08.DEV-VSF1-SW01: {
   source-arrowhead.label: ens2
   target-arrowhead.label: G0/0/8
   label: Vl1513
   class: virtual_connection
 }
-PRX07.DEV-VSF2-IPERF01 -- PRX05.DEV-VA2-SW01: {
+PRX07.DEV-VSF2-IPERF01 -- PRX07.DEV-VSF2-SW01: {
   source-arrowhead.label: ens1
   target-arrowhead.label: G0/0/8
   label: Vl1515
