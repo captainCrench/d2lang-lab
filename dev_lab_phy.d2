@@ -1,0 +1,198 @@
+title: Virtual Router Architecture {
+  shape: text
+  near: top-center
+  style: {
+    font-size: 75
+  }
+}
+
+direction: right
+
+classes: {
+  core_router: {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Router.svg
+    style: {
+      shadow: true
+    }
+  }
+  core_router_A: {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Router.svg
+    style: {
+      shadow: true
+      font-color: blue
+    }
+  }
+  core_router_B: {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Router.svg
+    style: {
+      shadow: true
+      font-color: red
+    }
+  }
+
+  sdwan: {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Firewall%20Rules.svg
+  }
+
+  switch: {
+    icon: https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FLocal%20Network%20Gateways.svg
+  }
+  server: {
+    icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+  }
+  FTM: {
+    icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+  }
+  virtual_connection: {
+    style: {
+      stroke-dash: 3
+      stroke: deepskyblue
+      font-color: deepskyblue
+      bold: true
+    }
+  }
+  virtual_connection_core: {
+    style: {
+      stroke-dash: 3
+      stroke: green
+      font-color: green
+      bold: true
+    }
+  }
+  virtual_connection_core_A: {
+    style: {
+      stroke-dash: 3
+      stroke: blue
+      font-color: blue
+      bold: true
+    }
+  }
+  virtual_connection_core_B: {
+    style: {
+      stroke-dash: 3
+      stroke: red
+      font-color: red
+      bold: true
+    }
+  }
+}
+
+PRX01: {
+  class: server
+  label: PRX01 \n HPE ProLiant DL380 Gen9
+}
+
+PRX02: {
+  class: server
+  label: PRX02 \n HPE ProLiant DL380 Gen9
+}
+PRX03: {
+  class: server
+  label: PRX03 \n HPE ProLiant DL380 Gen9
+}
+
+PRX04: {
+  class: server
+  label: PRX04 \n HPE ProLiant DL380 Gen9
+}
+
+PRX05: {
+  class: server
+  label: PRX05 \n HPE ProLiant DL380 Gen9
+}
+
+PRX07: {
+  class: server
+  label: PRX07 \n HPE ProLiant DL380 Gen9
+}
+
+PRX08: {
+  class: server
+  label: PRX08 \n HPE ProLiant DL380 Gen9
+}
+
+PRX09: {
+  class: server
+  label: PRX09 \n HPE ProLiant DL380 Gen9
+}
+
+PRX10: {
+  class: server
+  label: PRX10 \n HPE ProLiant DL380 Gen9
+}
+
+DC-SW01: {
+  class: switch
+  label: DC-SW01 \n Cisco C9300X-24Y
+}
+DC-SW02: {
+  class: switch
+  label: DC-SW02 \n Aruba ????
+}
+
+DC-SW01 -- PRX01: {
+  source-arrowhead.label: Twe1/0/1
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
+
+DC-SW01 -- PRX02: {
+  source-arrowhead.label: Twe1/0/3
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
+
+DC-SW01 -- PRX03: {
+  source-arrowhead.label: Twe1/0/5
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
+
+DC-SW01 -- PRX04: {
+  source-arrowhead.label: Twe1/0/7
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
+
+DC-SW01 -- PRX05: {
+  source-arrowhead.label: Twe1/0/9
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
+
+DC-SW01 -- PRX07: {
+  source-arrowhead.label: Twe1/0/13
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
+
+DC-SW01 -- PRX08: {
+  source-arrowhead.label: Twe1/0/15
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
+
+DC-SW01 -- PRX09: {
+  source-arrowhead.label: Twe1/0/17
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
+
+DC-SW01 -- PRX10: {
+  source-arrowhead.label: Twe1/0/19
+  target-arrowhead.label: ens1f0
+  label: Trunk
+  style.stroke: black
+}
