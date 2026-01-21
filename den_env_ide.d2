@@ -1,0 +1,79 @@
+title: Development IDE Architecture {
+  shape: text
+  near: top-center
+  style: {
+    font-size: 75
+  }
+}
+
+direction: right
+
+classes: {
+  core_router: {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Router.svg
+    style: {
+      shadow: true
+    }
+  }
+
+  cloud: {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F092-network.svg
+  }
+
+  laptop: {
+    shape: image
+    icon: https://icons.terrastruct.com/tech%2Flaptop.svg
+  }
+
+  server: {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+  }
+
+  virtual_connection_core: {
+    style: {
+      stroke-dash: 3
+      stroke: green
+      font-color: green
+      bold: true
+    }
+  }
+}
+
+AUS: {
+  label: Australia
+  NAT_Router: {
+    label: NAT Router
+    class: core_router
+    tooltip: Translate 10.190.20.7 --> 172.16.30.4
+  }
+  DEV-DC-DEVxx: {
+    class: server
+    label: DEV-DC-DEVxx\nVSCode Server
+  }
+  DEV_Cloud: {
+    class: cloud
+    label: Dev Env\nDevices/Applications
+  }
+}
+
+Corp_Laptop: {
+  class: laptop
+  label: L3H Corp Laptop\nVSCode UI/Extensions
+}
+Corp_Laptop -- AUS.DEV-DC-DEVxx: {
+  label: SSH Tunnel
+  class: virtual_connection_core
+}
+
+AUS.NAT_Router -> AUS.DEV-DC-DEVxx: {
+  label: NAT Translation
+  style.stroke: black
+}
+
+AUS.DEV-DC-DEVxx -> AUS.DEV_Cloud: {
+  label: Robot Script Interactions
+  style.stroke: black
+}
