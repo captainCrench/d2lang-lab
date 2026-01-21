@@ -57,6 +57,14 @@ AUS: {
     class: cloud
     label: Dev Env\nDevices/Applications
   }
+  DEV-DC-SUP01: {
+    class: server
+    label: DEV-DC-SUP01\nWeb Proxy
+  }
+  Internet: {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F140-internet.svg
+  }
 }
 
 Corp_Laptop: {
@@ -76,4 +84,14 @@ AUS.NAT_Router -> AUS.DEV-DC-DEVxx: {
 AUS.DEV-DC-DEVxx -> AUS.DEV_Cloud: {
   label: Robot Script Interactions
   style.stroke: black
+}
+
+AUS.DEV-DC-DEVxx -> AUS.DEV-DC-SUP01: {
+  label: HTTP Web Traffic
+  style.stroke: blue
+}
+
+AUS.DEV-DC-SUP01 -> AUS.Internet: {
+  label: HTTP Web Traffic
+  style.stroke: blue
 }
