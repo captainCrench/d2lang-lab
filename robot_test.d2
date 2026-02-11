@@ -1,0 +1,71 @@
+title: Test Setup {
+  shape: text
+  near: top-center
+  style: {
+    font-size: 75
+  }
+}
+
+direction: right
+
+classes: {
+  python_script: {
+    shape: image
+    icon: https://icons.terrastruct.com/dev%2Fpython.svg
+  }
+
+  server: {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+  }
+
+  seq: {
+    style: {
+      stroke-dash: 3
+      stroke: green
+      font-color: green
+      bold: true
+    }
+  }
+}
+
+DEV-DC-DEV02: {
+  icon: https://icons.terrastruct.com/essentials%2F112-server.svg
+  xrd1: {
+    icon: https://icons.terrastruct.com/dev%2Fdocker.svg
+  }
+  xrd2: {
+    icon: https://icons.terrastruct.com/dev%2Fdocker.svg
+  }
+  robot_script: {
+    class: python_script
+  }
+}
+
+DEV-DC-LOG01: {
+  class: server
+}
+
+DEV-DC-NTBX01: {
+  class: server
+}
+
+DEV-DC-DEV02.robot_script -> DEV-DC-NTBX01: {
+  label: 1. Pull environment data
+  class: seq
+}
+
+DEV-DC-DEV02.robot_script -> DEV-DC-DEV02.xrd1: {
+  label: 2. Shutdown interface
+  class: seq
+}
+
+DEV-DC-DEV02.xrd1 -> DEV-DC-LOG01: {
+  label: 3. Send syslog
+  class: seq
+}
+
+DEV-DC-DEV02.robot_script -> DEV-DC-LOG01: {
+  label: 4. HTTP REST API call to verify syslog
+  class: seq
+}
